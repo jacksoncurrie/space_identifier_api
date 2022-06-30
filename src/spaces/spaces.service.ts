@@ -16,19 +16,21 @@ export class SpacesService {
     return space.save();
   }
 
-  findAll(): Promise<Space[]> {
+  async findAll(): Promise<Space[]> {
     return this.spaceModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} space`;
+  async findOne(id: string): Promise<Space> {
+    return this.spaceModel.findOne({ _id: id }).exec();
   }
 
-  update(id: number, updateSpaceInput: UpdateSpaceInput) {
-    return `This action updates a #${id} space`;
+  async update(id: string, updateSpaceInput: UpdateSpaceInput): Promise<Space> {
+    return this.spaceModel
+      .findOneAndUpdate({ _id: id }, updateSpaceInput, { new: true })
+      .exec();
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} space`;
+  async remove(id: string): Promise<Space> {
+    return this.spaceModel.findByIdAndDelete({ _id: id }).exec();
   }
 }

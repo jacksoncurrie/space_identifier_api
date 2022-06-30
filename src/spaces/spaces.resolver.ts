@@ -1,4 +1,4 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { SpacesService } from './spaces.service';
 import { Space } from './schemas/space.schema';
 import { CreateSpaceInput } from './dto/create-space.input';
@@ -19,7 +19,7 @@ export class SpacesResolver {
   }
 
   @Query(() => Space, { name: 'space' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
+  findOne(@Args('id', { type: () => String }) id: string) {
     return this.spacesService.findOne(id);
   }
 
@@ -29,7 +29,7 @@ export class SpacesResolver {
   }
 
   @Mutation(() => Space)
-  removeSpace(@Args('id', { type: () => Int }) id: number) {
+  removeSpace(@Args('id', { type: () => String }) id: string) {
     return this.spacesService.remove(id);
   }
 }
