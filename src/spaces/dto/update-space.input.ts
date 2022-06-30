@@ -5,7 +5,4 @@ import { InputType, Field, PartialType } from '@nestjs/graphql';
 export class UpdateSpaceInput extends PartialType(CreateSpaceInput) {
   @Field(() => String)
   id: string;
-
-  @Field(() => String, { description: 'Space name' })
-  name: string;
 }
