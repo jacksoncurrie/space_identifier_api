@@ -18,12 +18,7 @@ export class SpaceItemsService {
   }
 
   async findAll(): Promise<SpaceItem[]> {
-    const spaceItems = await this.spaceItemModel
-      .find()
-      .populate('space')
-      .exec();
-    console.log(spaceItems);
-    return spaceItems;
+    return await this.spaceItemModel.find().populate('space').exec();
   }
 
   async findOne(id: string): Promise<SpaceItem> {
