@@ -15,7 +15,8 @@
 			"extensions": [
 				"dbaeumer.vscode-eslint",
 				"mongodb.mongodb-vscode",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"GraphQL.vscode-graphql"
 			],
 			"settings": {
 				"editor.formatOnSave": true,
