@@ -4,7 +4,7 @@ import { Model } from 'mongoose';
 import {
   SpaceItem,
   SpaceItemDocument,
-} from 'src/space-items/schemas/space-item.schema';
+} from '../space-items/schemas/space-item.schema';
 import { CreateSpaceInput } from './dto/create-space.input';
 import { UpdateSpaceInput } from './dto/update-space.input';
 import { Space, SpaceDocument } from './schemas/space.schema';
@@ -12,7 +12,8 @@ import { Space, SpaceDocument } from './schemas/space.schema';
 @Injectable()
 export class SpacesService {
   constructor(
-    @InjectModel(Space.name) private spaceModel: Model<SpaceDocument>,
+    @InjectModel(Space.name)
+    private spaceModel: Model<SpaceDocument>,
     @InjectModel(SpaceItem.name)
     private spaceItemModel: Model<SpaceItemDocument>,
   ) {}

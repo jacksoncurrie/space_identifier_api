@@ -7,7 +7,7 @@ describe('SpaceItemsResolver', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [SpaceItemsResolver, SpaceItemsService],
+      providers: [SpaceItemsResolver, SpaceItemsService, SpaceItemModel],
     }).compile();
 
     resolver = module.get<SpaceItemsResolver>(SpaceItemsResolver);

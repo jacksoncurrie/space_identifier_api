@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Schema as MongooseSchema } from 'mongoose';
 import { ObjectType, Field } from '@nestjs/graphql';
-import { Space } from 'src/spaces/schemas/space.schema';
+import { Space } from '../../spaces/schemas/space.schema';
 
 export type SpaceItemDocument = SpaceItem & Document;
 
